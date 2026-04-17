@@ -1,0 +1,57 @@
+UIDCSE25242-SK.TASMIYA
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Largest of Five Numbers</title>
+</head>
+<body>
+
+<h2>Find Largest of Five Numbers</h2>
+
+<label>Enter first number:</label>
+<input type="number" id="num1"><br><br>
+
+<label>Enter second number:</label>
+<input type="number" id="num2"><br><br>
+
+<label>Enter third number:</label>
+<input type="number" id="num3"><br><br>
+
+<label>Enter fourth number:</label>
+<input type="number" id="num4"><br><br>
+
+<label>Enter fifth number:</label>
+<input type="number" id="num5"><br><br>
+<button onclick="findLargest()">Find Largest</button>
+
+<script>
+
+function findLargest() {
+    let a = parseInt(document.getElementById("num1").value);
+    let b = parseInt(document.getElementById("num2").value);
+    let c = parseInt(document.getElementById("num3").value);
+    let d = parseInt(document.getElementById("num4").value);
+    let e = parseInt(document.getElementById("num5").value);
+
+    let largest = a;
+
+    if (b > largest) {
+        largest = b;
+    }
+    if (c > largest) {
+        largest = c;
+    }
+    if (d > largest) {
+        largest = d;
+    }
+    if (e > largest) {
+        largest = e;
+    }
+
+    alert("Largest number is: " + largest);
+}
+
+</script>
+
+</body>
+</html>

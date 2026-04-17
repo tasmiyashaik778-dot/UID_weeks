@@ -1,0 +1,99 @@
+UID25242-SK.TASMIYA
+<!DOCTYPE html> 
+<html> 
+<head> 
+<title>Mini Website</title> 
+<style> 
+*{ 
+margin:0; 
+padding:0; 
+box-sizing:border-box; 
+font-family:Arial, sans-serif; 
+} 
+body{ 
+background: linear-gradient(to right, #4e73df, #1cc88a); 
+text-align:center; 
+color:white; 
+} 
+header{ 
+padding:20px; 
+font-size:30px; 
+font-weight:bold; 
+} 
+nav{ 
+background: rgba(0,0,0,0.3); 
+padding:15px; 
+} 
+nav a{ 
+color:white; 
+text-decoration:none; 
+margin:0 25px; 
+font-size:18px; 
+padding:8px 15px; 
+border-radius:20px; 
+transition:0.3s; 
+} 
+nav a:hover{ 
+background:white; 
+color:#4e73df; 
+} 
+iframe{ 
+width:80%; 
+height:400px; 
+margin-top:30px; 
+border:none; 
+border-radius:15px; 
+background:white; 
+box-shadow:0 10px 20px rgba(0,0,0,0.3); 
+} 
+</style> 
+</head> 
+<body> 
+<header>Mini Website</header> 
+<nav> 
+<a href="#home" 
+onclick="document.getElementById('frame').srcdoc=document.getElementById('home').inne
+rHTML;return false;">Home</a> 
+<a href="#about" 
+onclick="document.getElementById('frame').srcdoc=document.getElementById('about').inne
+rHTML;return false;">About</a> 
+<a href="#contact" 
+onclick="document.getElementById('frame').srcdoc=document.getElementById('contact').in
+nerHTML;return false;">Contact</a> 
+</nav> 
+<iframe id="frame"></iframe> 
+<div id="home" style="display:none;"> 
+<h2 style="color:#4e73df;">Welcome to Our Mini Website</h2> 
+<p>This mini website is created to demonstrate a simple and attractive web design using 
+HTML and CSS. It shows how to create a navigation bar, styled sections, and a clean 
+layout.</p> 
+<p>Our aim is to provide a user-friendly and responsive webpage that is easy to understand 
+and navigate. Explore the pages to learn more about this project.</p> 
+</div> 
+<div id="about" style="display:none;"> 
+<h2 style="color:#1cc88a;">About This Website</h2> 
+<p>This website is a basic web development project designed for learning purposes. It 
+explains how to structure a webpage using HTML and apply styling using CSS.</p> 
+<p>The project includes:</p> 
+<ul> 
+    <li>Navigation Menu</li> 
+    <li>Styled Content Sections</li> 
+    <li>Responsive Layout</li> 
+    <li>Clean and Modern Design</li> 
+</ul> 
+<p>This mini project helps beginners understand the fundamentals of web design.</p> 
+</div> 
+<div id="contact" style="display:none;"> 
+<h2 style="color:#e74a3b;">Contact Us</h2> 
+<p>If you have any questions or suggestions regarding this website, feel free to contact 
+us.</p> 
+<p>Email: example@email.com</p> 
+<p>Phone: +91 98765 43210</p> 
+<p>Location: Andhra Pradesh, India</p> 
+<p>We appreciate your feedback and support. Thank you for visiting our mini website!</p> 
+</div> 
+<script> 
+document.getElementById('frame').srcdoc=document.getElementById('home').innerHTML; 
+</script> 
+</body> 
+</html>

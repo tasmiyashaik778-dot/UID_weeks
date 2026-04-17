@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>SIMPLE E-COMMERCE STORE</title>
+<style>
+.container{
+    display:grid;
+    grid-template-rows: auto auto 1fr auto;
+    grid-template-columns:200px 1fr;
+    grid-template-areas:
+      "header header"
+      "sale sale"
+      "sidebar products"
+      "footer footer";
+}
+.header{
+    grid-area: header;
+    text-align:center;
+    padding:10px;
+}
+.sale{
+    grid-area:sale;
+    text-align:center;
+    padding:10px;
+}
+.sidebar{
+    grid-area:sidebar;
+    padding:10px;
+    border:1px solid black;
+}
+
+.sidebar a{
+    display:block;
+    text-decoration:none;
+    color:black;
+    padding:5px;
+    border-bottom:1px solid black;
+}
+.products{
+    grid-area:products;
+    padding:10px;
+}
+.section{
+    display:none;
+}
+.section:target{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+}
+.product{
+    border:1px solid black;
+    padding:10px;
+    text-align:center;
+}
+.footer{
+    grid-area:footer;
+    background:black;
+    color:white;
+    text-align:center;
+    padding:10px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="header">
+<h2>My E-Commerce Store</h2>
+</div>
+
+<div class="sale">
+<h3>Big Sale upto 50% off</h3>
+</div>
+
+<div class="sidebar">
+<h3>Categories</h3>
+<a href="#electronics">Electronics</a>
+<a href="#clothes">Clothes</a>
+<a href="#home">Home Appliances</a>
+<a href="#books">Books</a>
+</div>
+
+<div class="products">
+
+<!-- Electronics -->
+<div id="electronics" class="section">
+<div class="product">
+<p>handfan</p>
+<img src="handfan.jpg" width="120" height="120">
+<p>$49</p>
+<button>Add to Cart</button>
+</div>
+<div class="product">
+<p>headphones</p>
+<img src="headphones.jpg"  width="120" height="120">
+<p>$79</p>
+<button>Add to Cart</button>
+</div>
+<div class="product">
+<p>instax mini 12</p>
+<img src="instax mini 12™.jpg"width="120" height="120">
+<p>$80</p>
+<button>Add to Cart</button>
+</div>
+<div class="product">
+<p>Smart Watch</p>
+<img src="smart watch.jpg" width="120" height="120">
+<p>$89</p><button>Add to Cart</button>
+</div>
+</div>
+
+<!-- Clothes -->
+<div id="clothes" class="section">
+<div class="product">
+<p>T-Shirt</p>
+<img src="tshirt.jpg" width="120" height="120">
+<p>$49</p><button>Add to Cart</button>
+</div>
+<div class="product">
+<p>Jeans</p>
+<img src="jean.jpg"width="120" height="120">
+<p>$79</p>
+<button>Add to Cart</button>
+</div>
+<div class="product">
+<p>Jacket</p>
+<img src="jacket.jpg" width="120" height="120">
+<p>$80</p>
+<button>Add to Cart</button>
+</div>
+<div class="product">
+<p>Shoes</p>
+<img src="shoes.jpg"width="120" height="120">
+<p>$89</p>
+<button>Add to Cart</button>
+</div>
+</div>
+
+<!-- Home Appliances -->
+<div id="home" class="section">
+<div class="product">
+<p>Fan</p>
+<img src="fan.jpg"width="120" height="120">
+<p>$49</p>
+<button>Add to Cart</button>
+</div>
+<div class="product">
+<p>TV</p>
+<img src="tv.jpg" width="120" height="120">
+<p>$79</p>
+<button>Add to Cart</button>
+</div>
+<div class="product">
+<p>Fridge</p>
+<img src="Refrigerator.jpg"width="120" height="120">
+<p>$80</p>
+<button>Add to Cart</button>
+</div>
+<div class="product">
+<p>Washing Machine</p>
+<img src="washing machine.jpg" width="120" height="120">
+<p>$89</p>
+<button>Add to Cart</button>
+</div>
+</div>
+
+<!-- Books -->
+<div id="books" class="section">
+<div class="product">
+<p>Math Book</p>
+<img src="maths.jpg" width="120" height="120">
+<p>$49</p>
+<button>Add to Cart</button>
+</div>
+<div class="product">
+<p>Science Book</p>
+<img src="science book.jpg" width="120" height="120">
+<p>$79</p>
+<button>Add to Cart</button>
+</div>
+<div class="product">
+<p>Story Book</p>
+<img src="stories books .jpg" width="120" height="120">
+<p>$80</p>
+<button>Add to Cart</button>
+</div>
+<div class="product">
+<p>History Book</p>
+<img src="history books.jpg"width="120" height="120">
+<p>$89</p>
+<button>Add to Cart</button>
+</div>
+</div>
+
+</div>
+
+<div class="footer">
+<p>© 2026 Store</p>
+</div>
+
+</div>
+
+</body>
+</html>

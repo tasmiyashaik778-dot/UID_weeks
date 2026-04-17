@@ -1,0 +1,158 @@
+UIDCSE25242-SK.TASMIYA
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Number Operations</title>
+    <style>
+            body {
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            background-color:lightpink;
+            text-align: center;
+            padding: 50px;
+        }
+
+        .container {
+            background: white;
+            padding: 50px;
+            border-radius: 10px;
+            width: 500px;
+            margin: auto;
+            box-shadow: 0px 0px 15px rgba(0,0,0,0.2);
+        }
+
+        input {
+            padding: 10px;
+            width: 80%;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid gray;
+        }
+
+        button {
+            margin: 5px;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            background-color:aquamarine;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color:greenyellow;
+        }
+
+        #output {
+            margin-top: 20px;
+            font-weight: bold;
+            color:black;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h2>Number Operations</h2>
+
+    <input type="number" id="num" placeholder="Enter a number">
+
+    <br>
+
+    <button onclick="checkEven()">Even</button>
+    <button onclick="checkOdd()">Odd</button>
+    <button onclick="checkPrime()">Prime</button>
+    <button onclick="factorial()">Factorial</button>
+    <button onclick="checkArmstrong()">Armstrong</button>
+
+    <div id="output"></div>
+</div>
+
+<script>
+
+function getNumber() {
+    let n = document.getElementById("num").value;
+    if (n === "") {
+        alert("Please enter a number");
+        return null;
+    }
+    return parseInt(n);
+}
+
+function checkEven() {
+    let n = getNumber();
+    if (n !== null) {
+        document.getElementById("output").innerText =
+            (n % 2 === 0) ? n + " is Even" : n + " is NOT Even";
+    }
+}
+
+function checkOdd() {
+    let n = getNumber();
+    if (n !== null) {
+        document.getElementById("output").innerText =
+            (n % 2 !== 0) ? n + " is Odd" : n + " is NOT Odd";
+    }
+}
+
+function checkPrime() {
+    let n = getNumber();
+    if (n !== null) {
+        if (n <= 1) {
+            document.getElementById("output").innerText = n + " is NOT Prime";
+            return;
+        }
+
+        let isPrime = true;
+        for (let i = 2; i <= Math.sqrt(n); i++) {
+            if (n % i === 0) {
+                isPrime = false;
+                break;
+            }
+        }
+
+        document.getElementById("output").innerText =
+            isPrime ? n + " is Prime" : n + " is NOT Prime";
+    }
+}
+
+function factorial() {
+    let n = getNumber();
+    if (n !== null) {
+        if (n < 0) {
+            document.getElementById("output").innerText = "Factorial not defined for negative numbers";
+            return;
+        }
+
+        let fact = 1;
+        for (let i = 1; i <= n; i++) {
+            fact *= i;
+        }
+
+        document.getElementById("output").innerText =
+            "Factorial of " + n + " is " + fact;
+    }
+}
+
+function checkArmstrong() {
+    let n = getNumber();
+    if (n !== null) {
+        let temp = n;
+        let sum = 0;
+        let digits = n.toString().length;
+
+        while (temp > 0) {
+            let rem = temp % 10;
+            sum += Math.pow(rem, digits);
+            temp = Math.floor(temp / 10);
+        }
+
+        document.getElementById("output").innerText =
+            (sum === n) ? n + " is an Armstrong Number" : n + " is NOT an Armstrong Number";
+    }
+}
+
+</script>
+
+</body>
+</html>

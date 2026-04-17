@@ -1,0 +1,39 @@
+UIDCSE25242-SK.TASMIYA
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rotating Square</title>
+  <style>
+    body.square {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f0f0f0;
+    }
+
+    .square {
+      width: 150px;
+      height: 150px;
+      background-color: blue;
+      animation: rotateSquare 2s linear infinite;
+    }
+
+    @keyframes rotateSquare {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+</head>
+<body>
+    <p>We can observe a square rotating 360 degrees</p>
+
+  <div class="square"></div>
+
+</body>
+</html>

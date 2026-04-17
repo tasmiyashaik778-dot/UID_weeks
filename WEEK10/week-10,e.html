@@ -1,0 +1,66 @@
+UIDCSE25242-SK.TASMIYA
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Grade</title>
+</head>
+<body>
+
+<h2>Student Marks and Grade</h2>
+
+<label>Subject 1:</label>
+<input type="number" id="s1"><br><br>
+
+<label>Subject 2:</label>
+<input type="number" id="s2"><br><br>
+
+<label>Subject 3:</label>
+<input type="number" id="s3"><br><br>
+
+<label>Subject 4:</label>
+<input type="number" id="s4"><br><br>
+
+<label>Subject 5:</label>
+<input type="number" id="s5"><br><br>
+
+<label>Subject 6:</label>
+<input type="number" id="s6"><br><br>
+
+<button onclick="calculateGrade()">Calculate Grade</button>
+
+<div id="output"></div>
+
+<script>
+
+function calculateGrade() {
+    let s1 = parseInt(document.getElementById("s1").value);
+    let s2 = parseInt(document.getElementById("s2").value);
+    let s3 = parseInt(document.getElementById("s3").value);
+    let s4 = parseInt(document.getElementById("s4").value);
+    let s5 = parseInt(document.getElementById("s5").value);
+    let s6 = parseInt(document.getElementById("s6").value);
+
+    let total = s1 + s2 + s3 + s4 + s5 + s6;
+    let avg = total / 6;
+
+    let grade;
+
+    if (avg >= 90)
+        grade = "A+";
+    else if (avg >= 75)
+        grade = "A";
+    else if (avg >= 60)
+        grade = "B";
+    else if (avg >= 50)
+        grade = "C";
+    else
+        grade = "Fail";
+
+    document.getElementById("output").innerHTML =
+        "Average Marks: " + avg + "<br>Grade: " + grade;
+}
+
+</script>
+
+</body>
+</html>

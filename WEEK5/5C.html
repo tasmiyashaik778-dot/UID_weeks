@@ -1,0 +1,225 @@
+UID25242-SK.TASMIYA
+<!DOCTYPE html>
+<html>
+<head>
+<title>Amrita Vishwa Vidyapeetham</title>
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Times New Roman', serif;
+}
+body{
+margin:0;
+min-height:100vh;
+background-image:url('Amravati-02.jpg');
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+background-attachment:fixed;
+}
+.header{
+background:#8b0000;
+color:white;
+text-align:center;
+font-size:42px;
+padding:20px;
+letter-spacing:3px;
+}
+input[type="radio"]{
+display:none;
+}
+.menu{
+background:#1e90ff;
+text-align:center;
+padding:10px;
+}
+.menu label{
+color:yellow;
+font-size:17px;
+margin:8px 12px;
+cursor:pointer;
+font-weight:bold;
+}
+.menu label:hover{
+color:white;
+}
+.container{
+display:flex;
+justify-content:space-around;
+padding:40px;
+flex-wrap:wrap;
+}
+.login-box{
+width:320px;
+padding:30px;
+border-radius:15px;
+background:linear-gradient(to bottom,#1e90ff,#32cd32);
+color:white;
+box-shadow:0 10px 20px rgba(0,0,0,0.6);
+}
+.login-box h2{
+text-align:center;
+margin-bottom:20px;
+text-decoration:underline;
+}
+.login-box input{
+width:100%;
+padding:8px;
+margin:10px 0;
+border-radius:5px;
+border:none;
+}
+.remember{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin:10px 0;
+font-size:14px;
+}
+.save{
+display:flex;
+align-items:center;
+gap:5px;
+white-space:nowrap;
+}
+.login-box a{
+color:blue;
+}
+.content{
+width:650px;
+background:white;
+padding:25px;
+border-radius:10px;
+box-shadow:0 10px 20px rgba(0,0,0,0.6);
+display:none;
+}
+.content h2{
+color:#8b0000;
+text-align:center;
+margin-bottom:15px;
+}
+.content img{
+width:100%;
+height:280px;
+margin-top:15px;
+border-radius:10px;
+}
+#amaravati:checked ~ .container #amaravatiContent,
+#amritapuri:checked ~ .container #amritapuriContent,
+#bengaluru:checked ~ .container #bengaluruContent,
+#chennai:checked ~ .container #chennaiContent,
+#coimbatore:checked ~ .container #coimbatoreContent,
+#faridabad:checked ~ .container #faridabadContent,
+#kochi:checked ~ .container #kochiContent,
+#mysuru:checked ~ .container #mysuruContent{
+display:block;
+}
+</style>
+</head>
+<body>
+<div class="header">
+AMRITA VISHWA VIDYAPEETHAM
+</div>
+<input type="radio" name="campus" id="amaravati">
+<input type="radio" name="campus" id="amritapuri">
+<input type="radio" name="campus" id="bengaluru">
+<input type="radio" name="campus" id="chennai">
+<input type="radio" name="campus" id="coimbatore">
+<input type="radio" name="campus" id="faridabad">
+<input type="radio" name="campus" id="kochi">
+<input type="radio" name="campus" id="mysuru">
+<div class="menu">
+<label for="amaravati">AMARAVATI</label>
+<label for="amritapuri">AMRITAPURI</label>
+<label for="bengaluru">BENGALURU</label>
+<label for="chennai">CHENNAI</label>
+<label for="coimbatore">COIMBATORE</label>
+<label for="faridabad">FARIDABAD</label>
+<label for="kochi">KOCHI</label>
+<label for="mysuru">MYSURU</label>
+</div>
+<div class="container">
+<div class="login-box">
+<h2>Login</h2>
+<input type="email" placeholder="Enter your email id">
+<input type="password" placeholder="Enter your password">
+<div class="remember">
+<label class="save">
+<input type="checkbox"> Save me
+</label>
+<a href="#">Forgot Password?</a>
+</div>
+<button>Login</button>
+<p>Don't have an account? <a href="#">Register</a></p>
+</div>
+<div class="content" id="amaravatiContent">
+<h2>About Amaravati Campus</h2>
+<p>Amrita Vishwa Vidyapeetham Amaravati Campus is located in Andhra Pradesh.
+It offers quality education with modern infrastructure and advanced laboratories.
+The campus provides a peaceful environment that supports learning and research.
+It focuses on academic excellence, innovation, and overall student development.</p>
+<img src="nbElb5oz-amrita-amaravati-campus-banner-2022.jpg">
+</div>
+<div class="content" id="amritapuriContent">
+<h2>About Amritapuri Campus</h2>
+<p>Amrita Vishwa Vidyapeetham Amritapuri Campus is located in Kerala near the Arabian
+Sea.
+It is the headquarters of the university and offers a peaceful learning environment.
+The campus provides courses in engineering, arts, science, and social work.
+It focuses on academic excellence along with spiritual and value-based education.</p>
+<img src="fS229Wqz-unesco-banner-01.jpg">
+</div>
+<div class="content" id="bengaluruContent">
+<h2>About Bengaluru Campus</h2>
+<p>The Bengaluru Campus is known for its strong focus on engineering and technology
+programs.
+It offers modern laboratories and research facilities.
+The campus encourages innovation and industry collaboration.
+It provides students with excellent academic and placement opportunities.</p>
+<img src="https://webfiles.amrita.edu/2022/05/1pVFAhdP-amrita-admission-bengalurucampus.jpg">
+</div>
+<div class="content" id="chennaiContent">
+<h2>About Chennai Campus</h2>
+<p>The Chennai Campus specializes mainly in engineering education.
+It provides advanced infrastructure and technical training.
+The campus promotes research and practical learning.
+It prepares students for successful careers in technology fields.</p>
+<img src="https://webfiles.amrita.edu/2019/06/8cpBy7xk-Banner-1384-chennai.jpg">
+</div>
+<div class="content" id="coimbatoreContent">
+<h2>About Coimbatore Campus</h2>
+<p>The Coimbatore Campus is one of the largest campuses of the university.
+It offers diverse programs in engineering, management, arts, and science.
+The campus has excellent research centers and modern facilities.
+It focuses on academic excellence and holistic student development.</p>
+<img src="https://webfiles.amrita.edu/2020/06/hyKlkquw-790-100.jpg">
+</div>
+<div class="content" id="faridabadContent">
+<h2>About Faridabad Campus</h2>
+<p>The Faridabad Campus is located near New Delhi.
+It offers programs in engineering, management, and medical sciences.
+The campus emphasizes research and innovation.
+It provides strong industry exposure and career support.</p>
+<img src="https://webfiles.amrita.edu/2023/04/school-of-medicine-faridabad.jpg">
+</div>
+<div class="content" id="kochiContent">
+<h2>About Kochi Campus</h2>
+<p>The Kochi Campus is well known for medical and health science programs.
+It includes a teaching hospital with advanced healthcare facilities.
+The campus provides quality education in medicine and nursing.
+It focuses on service-oriented and value-based learning.</p>
+<img src="https://webfiles.amrita.edu/2019/06/EXepuCDM-New-Project-11.jpg">
+</div>
+<div class="content" id="mysuruContent">
+<h2>About Mysuru Campus</h2>
+<p>The Mysuru Campus offers programs in engineering and postgraduate studies.
+It provides a calm and focused learning environment.
+The campus supports research and skill development.
+It encourages students to achieve academic and professional excellence.</p>
+<img src="https://img.youtube.com/vi/q98AiOZyRsM/maxresdefault.jpg">
+</div>
+</div>
+</body>
+</html>

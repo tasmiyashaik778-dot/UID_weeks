@@ -1,0 +1,42 @@
+UIDCSE25242-SK.TASMIYA
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Moving Ball</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: pink;
+    }
+
+    .ball {
+      width: 80px;
+      height: 80px;
+      background-color: red;
+      border-radius: 50%;
+      animation: bounce 1s ease-in-out infinite;
+    }
+
+    @keyframes bounce {
+      0% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-150px);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="ball"></div>
+
+</body>
+</html>

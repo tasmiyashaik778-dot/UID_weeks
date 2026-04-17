@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<body style="background-color: lavender; color: black;text-align: left"></body>
+    <h1 style="font-family: Verdana, Geneva, Tahoma, sans-serif;font: size 100%; text-align: center;;">College Admission Registration</h1>
+    <table width="600" border="1" 
+    style="background-color: white; height: 500px;margin: auto;">
+    <tr>
+        <th>Full-name:</th>
+        <th><input type="text"></th>
+    </tr>
+     <tr>
+         <th>E-mail:</th>
+         <th><input type="text"></th>
+     </tr>
+     <tr>
+        <th>PHONE_NUMBER:</th>
+        <th> <input type="text"></th>
+    </tr>
+    <tr>
+         <th>GENDER:</th>
+         <th>
+            <input type="radio" id="female" name="gender"value="female" >
+            <label for="female">Female</label>
+            <input type="radio" id="male" name="gender"value="male">
+            <label for="male">Male</label>
+            <input type="radio" id="others" name="gender"value="others">
+            <label for="others">Others</label>  
+         </th>
+     </tr>
+     <tr>
+        <th>COURSE APPLYING FOR:</th>
+        <th>
+            <!--<select id="course" name="course" size="1">-->
+            <select id="course"name="course">
+            <option value="">--select--</option>
+            <option value="B-Tech">B-Tech</option></th>
+    </tr>
+    <tr>
+        <th>HOBBIES:</th>
+        <th>
+            <input type="checkbox" id="sports" name="hobbies" value="sports" >
+            <label for="sports">sports</label>
+            <input type="checkbox" id="music" name="hobbies" value="music">
+            <label for="music">music</label>
+            <input type="checkbox" id="reading" name="hobbies" value="reading">
+            <label for="reading">reading</label>  
+        </th>
+    </tr>
+    <tr>
+        <th>DATE OF BIRTH:</th>
+        <th><input type="date"></th>
+    </tr>
+    <tr>
+        <th>UPLOAD CERTIFICATE:</th>
+        <th><input type="file"></th>
+    </tr>
+    <tr>
+        <th>ADRESS:</th>
+        <th><textarea name="message" rows="8" cols="20"></textarea></th>
+    </tr>
+    <tr>
+    <th colspan="2" style="text-align: center;">
+        <input type="submit">
+        <input type="reset">
+    </th>
+</tr>
+</html>
