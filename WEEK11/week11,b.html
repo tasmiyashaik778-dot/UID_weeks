@@ -1,0 +1,28 @@
+UIDCSE25242-SK.TASMIYA<br>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Email Validation</title>
+</head>
+<body>
+<form onsubmit="return validateEmail()">
+    <label>Enter Email:</label>
+    <input type="text" id="email">
+    <p id="message"></p>
+    <button type="submit">Register</button>
+</form>
+<script>
+function validateEmail() {
+    let email = document.getElementById("email").value;
+    let message = document.getElementById("message");
+    let pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!pattern.test(email)) {
+        message.innerHTML = "Invalid email format";
+        message.style.color = "red";
+        return false; 
+    }
+    return true; 
+}
+</script>
+</body>
+</html>

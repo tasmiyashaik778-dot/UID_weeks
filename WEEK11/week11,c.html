@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Password Strength</title>
+</head>
+<body>
+
+<label>Enter Password:</label>
+<input type="password" id="password" oninput="checkPassword()">
+<p id="message"></p>
+
+<script>
+function checkPassword() {
+    let password = document.getElementById("password").value;
+    let message = document.getElementById("message");
+    let strongPattern = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).{8,}$/;
+    if (password.length === 0) {
+        message.innerHTML = "";
+    }
+    else if (strongPattern.test(password)) 
+    {
+        message.innerHTML = "Strong Password";
+        message.style.color = "green";
+    }
+    else {
+        message.innerHTML = "Weak Password";
+        message.style.color = "red";
+    }
+}
+</script>
+</body>
+</html>

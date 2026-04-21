@@ -1,0 +1,29 @@
+UIDCSE25242-SK.TASMIYA<br>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Username Validation</title>
+</head>
+<body>
+
+<label>Enter Username:</label>
+<input type="text" id="username" oninput="checkUsername()">
+<p id="message"></p>
+
+<script>
+function checkUsername() {
+    let username = document.getElementById("username").value;
+    let message = document.getElementById("message");
+
+    if (username.length < 5) {
+        message.innerHTML = "Username must be at least 5 characters";
+        message.style.color = "red";
+    } else {
+        message.innerHTML = "Valid username";
+        message.style.color = "green";
+    }
+}
+</script>
+
+</body>
+</html>

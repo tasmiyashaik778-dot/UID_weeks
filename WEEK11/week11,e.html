@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form</title>
+</head>
+<body>
+
+<form onsubmit="return validateForm()">
+
+    <!-- Username -->
+    <label>Username:</label>
+    <input type="text" id="username" oninput="checkUsername()">
+    <p id="userMsg"></p>
+
+    <!-- Email -->
+    <label>Email:</label>
+    <input type="text" id="email">
+    <p id="emailMsg"></p>
+
+    <!-- Password -->
+    <label>Password:</label>
+    <input type="password" id="password" oninput="checkPassword()">
+    <p id="passMsg"></p>
+
+    <!-- Mobile -->
+    <label>Mobile:</label>
+    <input type="text" id="mobile" onblur="checkMobile()">
+    <p id="mobileMsg"></p>
+
+    <button type="submit">Register</button>
+
+</form>
+
+<script>
+function checkUsername() {
+    let u = document.getElementById("username").value;
+    let msg = document.getElementById("userMsg");
+    if (u.length < 5) {
+        msg.innerHTML = "Minimum 5 characters required";
+        msg.style.color = "red";
+    } else {
+        msg.innerHTML = "";
+    }
+}
+function checkPassword() {
+    let p = document.getElementById("password").value;
+    let msg = document.getElementById("passMsg");
+    let pattern = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).{8,}$/;
+    if (pattern.test(p)) {
+        msg.innerHTML = "Strong Password";
+        msg.style.color = "green";
+    } else {
+        msg.innerHTML = "Weak Password";
+        msg.style.color = "red";
+    }
+}
+function checkMobile() {
+    let m = document.getElementById("mobile").value;
+    let msg = document.getElementById("mobileMsg");
+    let pattern = /^[0-9]{10}$/;
+    if (pattern.test(m)) {
+        msg.innerHTML = "";
+    } else {
+        msg.innerHTML = "Enter exactly 10 digits";
+        msg.style.color = "red";
+    }
+}
+function validateForm() {
+    let email = document.getElementById("email").value;
+    let emailMsg = document.getElementById("emailMsg");
+
+    let pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!pattern.test(email)) {
+        emailMsg.innerHTML = "Invalid Email";
+        emailMsg.style.color = "red";
+        return false;
+    }
+    return true;
+}
+</script>
+</body>
+</html>

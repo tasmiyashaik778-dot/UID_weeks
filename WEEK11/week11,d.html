@@ -1,0 +1,28 @@
+UIDCSE25242-SK.TASMIYA<br>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mobile Validation</title>
+</head>
+<body>
+<label>Enter Mobile Number:</label>
+<input type="text" id="mobile" onblur="validateMobile()">
+<p id="message"></p>
+<script>
+function validateMobile() {
+    let mobile = document.getElementById("mobile").value;
+    let message = document.getElementById("message");
+
+    let pattern = /^[0-9]{10}$/;
+
+    if (pattern.test(mobile)) {
+        message.innerHTML = "Valid Mobile Number";
+        message.style.color = "green";
+    } else {
+        message.innerHTML = "Mobile number must be exactly 10 digits";
+        message.style.color = "red";
+    }
+}
+</script>
+</body>
+</html>
