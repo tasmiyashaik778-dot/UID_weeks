@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Habitica Clone</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background: #f4f4f4;
+}
+
+.navbar{
+    background:purple;
+    color:white;
+    padding:15px 25px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.nav-left{
+    display:flex;
+    gap:35px;
+    align-items:center;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:bold;
+}
+
+.nav-links{
+    display:flex;
+    gap:28px;
+}
+
+.nav-links button{
+    background:none;
+    border:none;
+    color:white;
+    font-size:18px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.nav-right{
+    display:flex;
+    gap:18px;
+    font-size:22px;
+}
+
+.profile{
+    background:purple;
+    color:white;
+    padding:25px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+}
+
+.profile-left{
+    display:flex;
+    gap:20px;
+    align-items:center;
+}
+
+.avatar{
+    width:120px;
+    height:120px;
+    background:#9f8cc8;
+    border:3px solid #7c67a7;
+}
+
+.bar{
+    width:300px;
+    height:16px;
+    background:black;
+    border-radius:20px;
+    margin-top:10px;
+    overflow:hidden;
+}
+
+.health{
+    width:100%;
+    height:100%;
+    background:red;
+}
+
+.xp{
+    width:20%;
+    height:100%;
+    background:orange;
+}
+
+.play-box{
+    text-align:center;
+}
+
+.play-box button{
+    margin-top:15px;
+    padding:10px 25px;
+    border:none;
+    background:#7a49de;
+    color:white;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.page{
+    display:none;
+}
+
+.page.active{
+    display:block;
+}
+
+.search-section{
+    padding:20px;
+    display:flex;
+    gap:15px;
+    align-items:center;
+}
+
+.search-section input{
+    flex:1;
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:6px;
+}
+
+.add-btn{
+    background:#6f3dd2;
+    color:white;
+    border:none;
+    padding:12px 20px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.container{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+    padding:20px;
+}
+
+.column{
+    background:#ececf0;
+    border-radius:10px;
+    min-height:500px;
+    padding:15px;
+}
+
+.column h2{
+    margin-bottom:15px;
+}
+
+.task{
+    background:white;
+    border-radius:8px;
+    margin-bottom:15px;
+    overflow:hidden;
+    box-shadow:0 2px 5px rgba(0,0,0,0.1);
+}
+
+.task-header{
+    background:#d9d5df;
+    padding:15px;
+    font-weight:bold;
+}
+
+.task-content{
+    padding:15px;
+    display:flex;
+    gap:15px;
+    align-items:center;
+}
+
+.circle{
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    border:3px solid #bbb;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:22px;
+}
+
+.challenge-top{
+    background:white;
+    padding:18px;
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    border-bottom:1px solid #ddd;
+}
+
+.challenge-top button{
+    background:none;
+    border:none;
+    font-size:20px;
+    cursor:pointer;
+    font-weight:bold;
+    color:#5b2d91;
+}
+
+.challenge-layout{
+    display:flex;
+    min-height:600px;
+}
+
+.sidebar{
+    width:250px;
+    background:#ececf0;
+    padding:20px;
+}
+
+.sidebar input{
+    width:100%;
+    padding:10px;
+    margin-bottom:20px;
+}
+
+.sidebar h3{
+    margin-bottom:15px;
+}
+
+.sidebar p{
+    margin-bottom:12px;
+    color:#444;
+}
+
+.challenge-content{
+    flex:1;
+    padding:30px;
+    background:#f8f8f8;
+}
+
+.challenge-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.challenge-header button{
+    padding:12px 20px;
+    border:none;
+    background:white;
+    border:1px solid #ccc;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.empty-box{
+    margin-top:120px;
+    text-align:center;
+    color:#777;
+}
+
+.empty-icon{
+    font-size:90px;
+    margin-bottom:20px;
+}
+
+.help-page{
+    padding:50px;
+}
+
+.help-box{
+    background:white;
+    padding:30px;
+    border-radius:10px;
+    max-width:700px;
+    margin:auto;
+}
+
+.help-box h1{
+    margin-bottom:20px;
+    color:#5b2d91;
+}
+
+.help-box p{
+    margin-bottom:15px;
+    line-height:1.6;
+}
+
+.account-page{
+    padding:50px;
+}
+
+.account-box{
+    background:white;
+    max-width:500px;
+    margin:auto;
+    padding:30px;
+    border-radius:10px;
+}
+
+.account-box h1{
+    margin-bottom:25px;
+    color:#5b2d91;
+}
+
+.account-box p{
+    margin-bottom:15px;
+    font-size:18px;
+}
+
+@media(max-width:1000px){
+    .container{
+        grid-template-columns:1fr;
+    }
+    .challenge-layout{
+        flex-direction:column;
+    }
+    .sidebar{
+        width:100%;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="navbar">
+    <div class="nav-left">
+        <div class="logo">⚔</div>
+        <div class="nav-links">
+            <button onclick="showPage('tasksPage')">Tasks</button>
+            <button onclick="showPage('challengePage')">Challenges</button>
+            <button onclick="showPage('helpPage')">Help</button>
+        </div>
+    </div>
+    <div class="nav-right">
+        <span onclick="showPage('accountPage')" style="cursor:pointer;">👤</span>
+    </div>
+</div>
+
+<div class="profile">
+    <div class="profile-left">  
+        <img class="avatar" src="avatar.png" alt="User Avatar">
+        <div>
+            <h2>Shaik Tasmiya</h2>
+            <p>Level 1 Warrior</p>
+            <div class="bar">
+                <div class="health"></div>
+            </div>
+            <div class="bar">
+                <div class="xp"></div>
+            </div>
+        </div>
+    </div>
+    <div class="play-box">
+        <h2>Play Habitica with Others</h2>
+        <p>Start your own Party or join an existing one</p>
+        <button>Get Started</button>
+    </div>
+</div>
+
+<div id="tasksPage" class="page active">
+    <div class="search-section">
+        <input type="text" placeholder="Search">
+        <button class="add-btn">+ Add Task</button>
+    </div>
+
+    <div class="container">
+        <div class="column">
+            <h2>Habits</h2>
+            <div class="task">
+                <div class="task-header">Add a Habit</div>
+                <div class="task-content">
+                    <div class="circle">+</div>
+                    <div>
+                        <h3>Add a task</h3>
+                        <p>Create new habits</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="column">
+            <h2>Dailies</h2>
+            <div class="task">
+                <div class="task-header">Add a Daily</div>
+                <div class="task-content">
+                    <div class="circle">✓</div>
+                    <div>
+                        <h3>Daily Tasks</h3>
+                        <p>Repeat every day</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="column">
+            <h2>To Do's</h2>
+            <div class="task">
+                <div class="task-header">Add a To Do</div>
+                <div class="task-content">
+                    <div class="circle">□</div>
+                    <div>
+                        <h3>Complete work</h3>
+                        <p>Track important tasks</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="challengePage" class="page">
+    <div class="challenge-top">
+        <button>My Challenges</button>
+        <button>Discover Challenges</button>
+    </div>
+    <div class="challenge-layout">
+        <div class="sidebar">
+            <input type="text" placeholder="Search">
+            <h3>Filters</h3>
+            <p>Academics</p>
+            <p>Creativity</p>
+            <p>Entertainment</p>
+            <p>Finance</p>
+            <p>Health + Fitness</p>
+            <p>Self Care</p>
+            <p>Productivity</p>
+        </div>
+        <div class="challenge-content">
+            <div class="challenge-header">
+                <h1>My Challenges</h1>
+                <button>+ Create Challenge</button>
+            </div>
+            <div class="empty-box">
+                <div class="empty-icon">🏳</div>
+                <h2>You don't have any Challenges.</h2>
+                <br>
+                <p>Challenges are community events where players complete tasks.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="helpPage" class="page">
+    <div class="help-page">
+        <div class="help-box">
+            <h1>Help Center</h1>
+            <p>Welcome to the Habitica Help page.</p>
+            <p>• Use Tasks to manage your habits and todos.</p>
+            <p>• Challenges allow you to compete with others.</p>
+            <p>• Click the profile icon to open Account Center.</p>
+            <p>• More features can be added using JavaScript and backend.</p>
+        </div>
+    </div>
+</div>
+
+<div id="accountPage" class="page">
+    <div class="account-page">
+        <div class="account-box">
+            <h1>Account Center</h1>
+            <p><b>Name:</b> Shaik Tasmiya</p>
+            <p><b>Level:</b> 1 Warrior</p>
+            <p><b>HP:</b> 50 / 50</p>
+            <p><b>XP:</b> 0 / 25</p>
+        </div>
+    </div>
+</div>
+
+<script>
+function showPage(pageId){
+    let pages = document.querySelectorAll(".page");
+    pages.forEach(function(page){
+        page.classList.remove("active");
+    });
+    document.getElementById(pageId).classList.add("active");
+}
+
+const addButton = document.querySelector(".add-btn");
+
+addButton.addEventListener("click", function () {
+    let taskName = prompt("Enter task name");
+
+    if(taskName === null || taskName.trim() === ""){
+        return;
+    }
+
+    let taskType = prompt(
+        "Enter task type:\nHabit\nDaily\nTodo"
+    );
+
+    if(taskType === null || taskType.trim() === ""){
+        return;
+    }
+
+    // Cleans up your entry (converts to lowercase, removes any spaces or symbols)
+    taskType = taskType.toLowerCase().replace(/[\s']/g, "");
+
+    let column;
+
+    // SELECT COLUMN BASED ON TYPE
+    if(taskType === "habit"){
+        column = document.querySelectorAll(".column")[0];
+    }
+    else if(taskType === "daily"){
+        column = document.querySelectorAll(".column")[1];
+    }
+    else if(taskType === "todo" || taskType === "todos" || taskType === "todo's"){ 
+        column = document.querySelectorAll(".column")[2];
+    }
+    else{
+        alert("Invalid type! Please type: Habit, Daily, or Todo.");
+        return;
+    }
+
+    // CREATE TASK ELEMENT
+    let task = document.createElement("div");
+    task.classList.add("task");
+    task.innerHTML = `
+        <div class="task-header">
+            ${taskName}
+        </div>
+        <div class="task-content">
+            <div class="circle complete-btn">✓</div>
+            <div>
+                <h3>${taskName}</h3>
+                <p>New user task</p>
+            </div>
+        </div>
+    `;
+
+    column.appendChild(task);
+
+    // COMPLETE TASK ACTION
+    let completeButton = task.querySelector(".complete-btn");
+    completeButton.addEventListener("click", function(){
+        task.style.opacity = "0.5";
+        task.style.textDecoration = "line-through";
+    });
+});
+
+// SEARCH FEATURE
+const searchInput = document.querySelector(".search-section input");
+
+searchInput.addEventListener("keyup", function(){
+    let value = searchInput.value.toLowerCase();
+    let tasks = document.querySelectorAll(".task");
+
+    tasks.forEach(function(task){
+        let text = task.innerText.toLowerCase();
+        if(text.includes(value)){
+            task.style.display = "block";
+        }
+        else{
+            task.style.display = "none";
+        }
+    });
+});
+</script>
+</body>
+</html>

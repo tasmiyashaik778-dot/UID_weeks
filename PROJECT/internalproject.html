@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login</title>
+
+<style>
+body {
+    font-family: Arial;
+    background: url("habittracker.jpg");
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-box {
+    background: rgba(255,255,255,0.9);
+    padding: 25px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+input {
+    width: 220px;
+    padding: 8px;
+    margin: 10px 0;
+}
+
+button {
+    width: 100%;
+    padding: 8px;
+    background: #4CAF50;
+    color: white;
+    border: none;
+}
+
+button:hover {
+    background: #45A049;
+}
+</style>
+</head>
+
+<body>
+
+<div class="login-box">
+    <h2>Email Login</h2>
+
+    <form onsubmit="return validateEmail()">
+        <input type="text" id="email" placeholder="Enter Email" required><br>
+        <input type="password" placeholder="Enter Password" required><br>
+
+        <p id="message"></p>
+
+        <button type="submit">Login</button>
+    </form>
+</div>
+
+<script>
+function validateEmail() {
+    let email = document.getElementById("email").value;
+    let message = document.getElementById("message");
+
+    let pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!pattern.test(email)) {
+        message.innerHTML = "Invalid email format";
+        message.style.color = "red";
+        return false;
+    }
+
+    message.innerHTML = "Login successful!";
+    message.style.color = "green";
+
+    setTimeout(() => {
+        window.location.href = "loading.html";
+    }, 1000);
+
+    return false;
+}
+</script>
+
+</body>
+</html>

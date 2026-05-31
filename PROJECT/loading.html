@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Loading</title>
+
+<style>
+body {
+    background: #5a3d8a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.loader {
+    width: 60px;
+    height: 60px;
+    border: 6px solid #ccc;
+    border-top: 6px solid white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    100% { transform: rotate(360deg); }
+}
+</style>
+</head>
+
+<body>
+
+<div class="loader"></div>
+
+<script>
+setTimeout(() => {
+    window.location.href = "home.html";
+}, 2000);
+</script>
+
+</body>
+</html>
